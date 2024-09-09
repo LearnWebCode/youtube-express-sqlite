@@ -135,8 +135,7 @@ function mustBeLoggedIn(req, res, next) {
   if (req.user) {
     return next()
   }
-  res.redirect("/")
-  next()
+  return res.redirect("/")
 }
 
 app.get("/create-post", mustBeLoggedIn, (req, res) => {
